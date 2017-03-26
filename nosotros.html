@@ -1,0 +1,158 @@
+---
+layout: default
+title: Nosotros
+order: 5
+permalink: /nosotros/
+---
+<section class="contenidos prox-evento p-t-50 p-b-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="info-evento text-center">
+                    <h1>Nosotros<span class="blink">|</span> </h1>
+                    <hr class="divider-morado">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://ey165jb4b1.execute-api.us-east-1.amazonaws.com/latest/member");
+xhr.onreadystatechange = function(dump){
+  if (this.readyState === 4) {
+    obj = JSON.parse(this.responseText);
+    console.log(obj);
+    
+    var currentDiv = document.getElementById("ddd"); 
+
+    for (var i = 0; i < obj.length; i++) {
+      console.log(obj[i]);
+
+      var newDiv = document.createElement("div");
+      newDiv.classList.add("col-sm-3","col-md-3");
+
+      var thumbnail = document.createElement("div");
+      thumbnail.classList.add("thumbnail");
+
+      var div_img = document.createElement("div");
+      div_img.classList.add("div_img");
+
+      var img = document.createElement("img");
+      img.classList.add("img_ajust");
+      img.setAttribute("src", obj[i].avatarUrl);
+
+      var caption = document.createElement("div");
+      caption.classList.add("caption");
+
+      var h3 = document.createElement("h3");
+      h3.classList.add("c-azul");
+      h3.innerHTML = obj[i].name;
+
+      var h4 = document.createElement("h4");
+      h4.classList.add("c-cian");
+      h4.innerHTML = obj[i].role;
+
+      var hr = document.createElement("hr");
+      hr.classList.add("divider-azul");
+     
+      caption.appendChild(h3);
+      caption.appendChild(h4);
+      caption.appendChild(hr);
+
+      for (var k = 0; k < obj[i].skills.length; k++) {
+        var span = document.createElement("span");
+        span.innerHTML = obj[i].skills[k];
+        span.classList.add("skill","php");
+        caption.appendChild(span);
+      }
+
+      var div_row = document.createElement("div");
+      div_row.classList.add("row","p-5");  
+
+      var div_col = document.createElement("div");
+      div_col.classList.add("col-md-12");      
+      
+      var city = document.createElement("i");
+      city.classList.add("fa","fa-globe");      
+
+      div_col.appendChild(city);
+      div_col.innerHTML += " La Serena";
+
+      div_row.appendChild(div_col);
+      caption.appendChild(div_row);
+
+      var div_row = document.createElement("div");
+      div_row.classList.add("row","p-5");  
+
+      var div_col = document.createElement("div");
+      div_col.classList.add("col-md-12");  
+
+      var site = document.createElement("i");
+      site.classList.add("fa","fa-sitemap");      
+
+      div_col.appendChild(site);
+      div_col.innerHTML += " "+obj[i].url;
+
+      div_row.appendChild(div_col);
+      caption.appendChild(div_row);
+
+      var div_row = document.createElement("div");
+      div_row.classList.add("row","p-5");  
+
+      var div_col = document.createElement("div");
+      div_col.classList.add("col-md-12");  
+
+      var site = document.createElement("i");
+      site.classList.add("fa","fa-envelope-o");      
+
+      div_col.appendChild(site);
+      div_col.innerHTML += " "+obj[i].email;
+
+      div_row.appendChild(div_col);
+      caption.appendChild(div_row);
+
+      var hr = document.createElement("hr");
+      hr.classList.add("divider-cian");
+     
+      caption.appendChild(hr);
+
+      var p = document.createElement("p");
+      p.innerHTML = obj[i].bio;
+
+      caption.appendChild(p);
+
+      div_img.appendChild(img);
+
+      thumbnail.appendChild(div_img); 
+      thumbnail.appendChild(caption);
+      newDiv.appendChild(thumbnail);
+      currentDiv.appendChild(newDiv); //añade texto al div creado. 
+
+  // añade el elemento creado y su contenido al DOM 
+  
+
+
+    }
+  }
+}
+
+xhr.send(data);
+
+
+// newDiv.appendChild(newContent)
+
+</script>
+
+<div class="nosotros">
+  <div class="div container">
+    <div id="ddd" class="row">
+
+    </div>
+  </div>
+
+
+
+</div>

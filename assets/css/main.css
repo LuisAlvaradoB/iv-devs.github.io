@@ -51,8 +51,8 @@ h1{font-size: 6vh;}
 
 	h1::before,
 	h2::before,
-	h3::before,
-	h4::before,
+	
+	
 	h5::before,
 	h6::before,
 	.tags::before{
@@ -64,8 +64,8 @@ h1{font-size: 6vh;}
 	}
 	h1::after,
 	h2::after,
-	h3::after,
-	h4::after,
+	
+	
 	h5::after,
 	h6::after,
 	.tags::after{
@@ -112,6 +112,10 @@ blockquote{
 
 	hr.divider-azul{
 		border-top:3px solid #345EA8;
+	}
+
+	hr.divider-cian{
+		border-top:1px solid #009CDC;
 	}
 
 	.row.sin-paddin {
@@ -902,3 +906,71 @@ footer{
 	object-fit: cover;
 	width: 100%;
   	height: 100%;
+}
+.img_ajust{
+	object-fit: cover;
+	width: 100%;
+  	height: 100%;
+}
+
+/************************************
+	NOSOTROS
+*************************************/
+.nosotros .div_img{
+	height: 200px;
+	width: 100%;
+}
+
+.nosotros .skill{
+	display: inline-block;
+	padding: .5em;
+	margin: .11em;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em;
+}
+
+.nosotros .skill.php{
+	color: #000;
+	background-color: #8892BF;
+}
+
+.nosotros .skill.node{
+	color: #FFF;
+	background-color: #026E00;
+}
+
+.nosotros .skill.css{
+	color: #FFF;
+	background-color: #30A9DC;
+}
+
+.nosotros .skill.html{
+	color: #FFF;
+	background-color: #F1672C;
+}
+
+.nosotros .skill.js{
+	color: #FFF;
+	background-color: #F1BF26;
+}
+
+.nosotros .skill.python{
+	color: #FFD140;
+	background-color: #3775A8;
+}
+
+.nosotros .skill.java{
+	color: #EC2025;
+	background-color: #0D8AC7;
+}
+
+.nosotros .skill.android{
+	color: #FFF;
+	background-color: #99CC00;
+}
